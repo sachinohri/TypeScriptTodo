@@ -1,38 +1,51 @@
+// Interface to define the structure of Todo
 interface ITodo{
     name:string;
     description: string;
     completed: boolean;
 }
 
+//Class Implementing the interface
 class Todo implements ITodo{
     constructor(public name: string, public description: string, public completed: boolean){}
 
 }
 
+// Class which contains list of Todos and the actions
 class TodoList{
     public static allTodos: Todo[]= new Array;
 
+    //Create a new Todo Item
     createTodoItem(name:string,description:string):number {
         let newItem = new Todo(name,description, false);
         let totalCount: number = TodoList.allTodos.push(newItem);
         return totalCount;
     }
 
+    // returns all the todos
     allTodoItems():Todo[]{
         return TodoList.allTodos;
     }
 }
 
+// window.onload is a pure JS
 window.onload = function(){
-    let name= <HTMLInputElement>document.getElementById("todoName");
+    //HTMLInput Element for Task and description
+    let task= <HTMLInputElement>document.getElementById("todoName");
     let description = <HTMLInputElement>document.getElementById("todoDescription");
 
-    document.getElementById("add").addEventListener('click',()=>toAlltask(name.value, description.value));    
+    // added a event listner for add click
+    document.getElementById("add").addEventListener('click',()=>toAlltask(task.value, description.value));    
 }
-function toAlltask(name:string, description:string){
-    let todo = new TodoList();
-    todo.createTodoItem(name, description);
 
+//Function called when add is clicked
+function toAlltask(task:string, description:string){
+
+    let todo = new TodoList();
+    // adds the task to list
+    todo.createTodoItem(task, description);
+
+    //Fetched the updated list and create a list item for UI
     let div = <HTMLDivElement>document.getElementById("todoList");
     let list="<dl class='dl-horizontal'>";
 
