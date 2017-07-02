@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./site.css" </head>
+
+    <body>
+        <div class="form-group">
+            <h1>Todo with TypeScript</h1>
+            </br>
+            <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-pencil"></span></span>
+                        <input type="text" class="form-control" placeholder="New Task" id="todoName">
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-tag"></span></span>
+                        <input type="text" class="form-control" placeholder="Description" id="todoDescription">
+                    </div>
+                </div>
+                <div class="col-xs-2"></div>
+            </div>
+            </br>
+            <input type="button" id="add" value="Add new ToDo" class="btn btn btn-primary" />
+        </div>
+
+        </br>
+
+        <h2 class="text-center">Current Todo Task </h2>
+        <div id="todoList"></div>
+        
+        <script src="app/todo.js"></script>
+    </body>
+
+</html>
