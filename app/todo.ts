@@ -55,6 +55,7 @@ function toAlltask(task:string, description:string){
     list += "</dl>"
     div.innerHTML = list;
 
+    //Casting
     (<HTMLInputElement>document.getElementById("todoName")).value = "";
 
     (<HTMLInputElement>document.getElementById("todoDescription")).value="";
